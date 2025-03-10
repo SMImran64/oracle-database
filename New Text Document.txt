@@ -1,0 +1,45 @@
+-- -- question --1
+
+CREATE TABLE emp(
+    emp_id NUMBER(7) CONSTRAINT emp_id_pk PRIMARY KEY,
+    emp_Name VARCHAR2(30) not NULL,
+    salary NUMBER(8,2) not NULL,
+    hire_date DATE not NULL,
+    Address VARCHAR2(25) not NULL,
+    email VARCHAR2(30) not NULL,
+    CONSTRAINT emp_mail_unq UNIQUE(email)
+);
+
+INSERT into emp values (1,'Imran',30000,'01-jan-2009','Azimpur','imran@gmail.com');
+  ALTER TABLE emp 
+  add department_id NUMBER(6)
+  add department_name VARCHAR2(30);
+
+
+-- question no---2
+
+
+SELECT department_id, round(avg(salary),2)
+from HR. employees
+GROUP by department_id
+having max(salary)>12000;
+
+-- question no---3
+
+SELECT first_name||' '||last_name as "Full Name"
+from hr. EMPLOYEES
+where FIRST_NAME like 'S%';
+
+
+-- question no---4
+
+SELECT round(avg(salary),2)
+from hr. EMPLOYEES
+where job_id like '%SA%';
+
+-- question no---5
+
+SELECT hire_date
+FROM hr. EMPLOYEES
+order by 1 ;
+
