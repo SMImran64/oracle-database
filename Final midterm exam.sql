@@ -23,7 +23,8 @@ INSERT into emp1287829 values(05,'Imran',100000,'01-sep-2025','Azimpur',80,'JAVA
 --question no-04
 create VIEW empvu 
 as select ename,dept_name,salary
-from emp1287829;
+from emp1287829
+where department_id=80;
 
 --question no-05
 
